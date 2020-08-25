@@ -7,3 +7,10 @@ def index(request):
     return render(request, "flights/index.html", {
         "flights": Flight.objects.all()
     })
+
+#pk = primarykey
+def flight(request, flight_id):
+    flight = Flight.objects.get(pk=flight_id)
+    return render(request, "flights/flight.html", {
+        "flight": flight
+    })
